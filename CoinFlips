@@ -1,0 +1,49 @@
+###################################################################################################
+#	 					                         		Coin Flip Simulation                                      #
+###################################################################################################
+
+#  simulation of coin flips
+
+(penny<-c(T,F))		# The possible outcomes of a coin flip are Heads "T" and Tails "F"
+#
+# The following function simulates flipping a coin 10 times for 10 trials.
+
+coinflips<-function(penny) {	
+	trial.0<<-sample(penny,10,replace=T)
+	trial.1<<-sample(penny,10,replace=T)
+	trial.2<<-sample(penny,10,replace=T)
+	trial.3<<-sample(penny,10,replace=T)
+	trial.4<<-sample(penny,10,replace=T)
+	trial.5<<-sample(penny,10,replace=T)
+	trial.6<<-sample(penny,10,replace=T)
+	trial.7<<-sample(penny,10,replace=T)
+	trial.8<<-sample(penny,10,replace=T)
+	trial.9<<-sample(penny,10,replace=T)
+	(results<<-rbind(trial.0,trial.1,trial.2,trial.3,trial.4,trial.5,trial.6,trial.7,trial.8,trial.9))
+}
+
+coinflips(penny)		# Run the function
+
+(freq<-table(results))		# Gives the overall frequency of heads and tails
+
+apply(results, 1, mean)		# Gives the frequency of flipping getting a Head in the sample generated.  Remember that Heads=Tails, Tails=False.  In R, True=1 and False=0
+
+apply(results, 1, function(x) {1-mean(x)})		# Gives the frequency of getting a Tail in the sample generated.
+
+(runlengths<-apply(results, 1, rle))		# Gives the run length for each trial.  Remember that Heads=Tails, Tails=False.  
+
+
+
+### If you want to make the process more streamlined and intuitive through R, do this:
+
+(penny<-c(T,F))
+
+(coinflips<-sample(penny, 100, replace=T))
+
+mean(results)		# Frequency of Heads
+
+1-mean(results)		# Frequency of Tails
+
+runlength<-rle(coinflips)
+
+(longest.runs<-tapply(runlength$lengths, runlength$values, max))		# Gives the run length for each trial.  Remember that Heads=Tails, Tails=False.
