@@ -14,7 +14,7 @@ Welcome to the Coding Exercises directory. Here you will find samples of code th
 
 ### Important: Remember to PULL all changes every time you open the project by clicking the blue down arrow in the upper right panel in RStudio. This will make sure you have access to all of the most current versions of code and files.
 
-## How to upload your own code to Github:
+## How to upload your own code to Github from RStudio:
 
 1. Create your new R script and save it in the cloned course directory on your computer.
 2. Click the Git tab in the upper right window of RStudio.
@@ -23,6 +23,8 @@ Welcome to the Coding Exercises directory. Here you will find samples of code th
 5. Add your name and date to the Commit Message box.
 6. Click Commit
 7. Click the green up arrow to Push your change to Git. This will ask you for your Github username and password.
+
+### Or, you can upload files directly to Github on the website.
 
 
 ### Here are the rules for adding code to this directory:
